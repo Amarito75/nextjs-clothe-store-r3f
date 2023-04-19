@@ -1,0 +1,86 @@
+.model {
+  width: 15vw;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.title {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: xx-large;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.titlenavbar {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 3px;
+  color: black;
+}
+
+.titlenavbar::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.titlenavbar:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.title:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.clothes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+  top: 0;
+}
+
+.line {
+  height: 2px;
+  border: 0;
+  background: black;
+  margin: 8px;
+}
