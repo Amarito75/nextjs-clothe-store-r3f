@@ -4,14 +4,18 @@
 
 import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera } from "@react-three/drei";
+import { useSnapshot } from "valtio";
+import { useFrame } from "@react-three/fiber";
+import { easing } from "maath";
+import { state } from "../color";
 
 export default function Scene({ ...props }) {
   const { nodes, materials } = useSpline(
     "https://prod.spline.design/1CKOeSq4PdkQCBiC/scene.splinecode"
   );
+
   return (
     <>
-      <color attach="background" args={["#979797"]} />
       <group {...props} dispose={null}>
         <directionalLight
           name="Directional Light"
@@ -39,12 +43,12 @@ export default function Scene({ ...props }) {
         <OrthographicCamera
           name="1"
           makeDefault={true}
-          zoom={0.5}
+          zoom={0.25}
           far={100000}
           near={-100000}
           position={[82.85, 112.79, 990.16]}
           rotation={[-0.11, 0.08, 0.01]}
-          scale={1}
+          scale={0.5}
         />
       </group>
     </>

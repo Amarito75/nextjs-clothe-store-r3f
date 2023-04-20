@@ -14,7 +14,7 @@ import {
 } from "@react-three/drei";
 import { useFrame, useThree, Canvas } from "@react-three/fiber";
 import React, { useState, useRef } from "react";
-import AnimTShirtModel from "./models/AnimTShirtModel";
+import AnimHoodieModel from "./models/AnimHoodieModel";
 import * as THREE from "three";
 import styles from "@/styles/Home.module.css";
 import { useSnapshot } from "valtio";
@@ -45,7 +45,7 @@ export default function Experience() {
           <Rig />
           <ScrollControls pages={3} damping={0.5}>
             <Scroll>
-              <AnimTShirtModel />
+              <AnimHoodieModel />
             </Scroll>
             <Scroll html>
               <h1
@@ -56,7 +56,7 @@ export default function Experience() {
                   left: "50%",
                 }}
               >
-                t shirt
+                hoodie
               </h1>
               <h1
                 style={{

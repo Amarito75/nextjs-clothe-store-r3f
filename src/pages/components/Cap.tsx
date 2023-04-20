@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import { useFrame, useThree, Canvas } from "@react-three/fiber";
 import React, { useState } from "react";
-import CapModel from "./CapModel";
+import CapModel from "./models/CapModel";
 import * as THREE from "three";
 import styles from "@/styles/Home.module.css";
 

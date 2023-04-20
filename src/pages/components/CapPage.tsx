@@ -14,7 +14,7 @@ import {
 } from "@react-three/drei";
 import { useFrame, useThree, Canvas } from "@react-three/fiber";
 import React, { useState, useRef } from "react";
-import AnimTShirtModel from "./models/AnimTShirtModel";
+import AnimCapModel from "./models/AnimCapModel";
 import * as THREE from "three";
 import styles from "@/styles/Home.module.css";
 import { useSnapshot } from "valtio";
@@ -29,12 +29,12 @@ export default function Experience() {
     useFrame(() => camera.position.lerp(vec.set(mouse.x * 0, 5, 20), 0.05));
     return (
       <CameraShake
-        maxYaw={0.01}
-        maxPitch={0.01}
+        maxYaw={0.5}
+        maxPitch={0.5}
         maxRoll={0.01}
-        yawFrequency={0.5}
-        pitchFrequency={0.5}
-        rollFrequency={0.4}
+        // yawFrequency={0.5}
+        // pitchFrequency={0.5}
+        // rollFrequency={0.4}
       />
     );
   }
@@ -43,9 +43,10 @@ export default function Experience() {
       <div className={styles.model__page}>
         <Canvas>
           <Rig />
+          {/* <OrbitControls maxZoom={2} minZoom={1} /> */}
           <ScrollControls pages={3} damping={0.5}>
             <Scroll>
-              <AnimTShirtModel />
+              <AnimCapModel />
             </Scroll>
             <Scroll html>
               <h1
@@ -56,7 +57,7 @@ export default function Experience() {
                   left: "50%",
                 }}
               >
-                t shirt
+                cap
               </h1>
               <h1
                 style={{

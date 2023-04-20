@@ -7,7 +7,7 @@ import {
 } from "@react-three/drei";
 import { useFrame, useThree, extend, Canvas } from "@react-three/fiber";
 import React, { useRef, useState } from "react";
-import HoodieModel from "./HoodieModel";
+import HoodieModel from "./models/HoodieModel";
 import * as THREE from "three";
 import styles from "@/styles/Home.module.css";
 
@@ -34,14 +34,14 @@ function Hoodie() {
         <Canvas>
           <ambientLight intensity={0.3} />
           <Environment preset="city" />
-          <color attach="background" args={["black"]} />
+          <color attach="background" args={["#ced4da"]} />
           <Center>
-            <Float>
+            <Float floatIntensity={100} speed={100}>
               <HoodieModel />
             </Float>
           </Center>
           <Rig />
-          <OrbitControls minZoom={0.5} maxZoom={1} />
+          <OrbitControls minZoom={0.2} maxZoom={0.2} />
         </Canvas>
       </div>
     </>

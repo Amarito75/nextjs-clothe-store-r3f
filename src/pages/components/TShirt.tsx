@@ -4,10 +4,11 @@ import {
   Center,
   Environment,
   Float,
+  OrthographicCamera,
 } from "@react-three/drei";
 import { useFrame, useThree, Canvas } from "@react-three/fiber";
 import React, { useState } from "react";
-import TShirtModel from "./TShirtModel";
+import TShirtModel from "./models/TShirtModel";
 import * as THREE from "three";
 import styles from "@/styles/Home.module.css";
 
@@ -35,9 +36,9 @@ function TShirt() {
           <ambientLight intensity={0.3} />
           <pointLight position={[10, 10, 10]} intensity={1.5} />
           <Environment preset="city" />
-          <color attach="background" args={["black"]} />
+          <color attach="background" args={["#ced4da"]} />
           <Center>
-            <Float>
+            <Float floatIntensity={100} speed={100}>
               <TShirtModel />
             </Float>
           </Center>
